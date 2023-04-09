@@ -77,7 +77,7 @@ public interface IPublisher
 }
 ```
 ## Диагарамма зависимостей
-![Diagram](https://github.com/Daizman/EFCore/blob/main/EFCoreBookStoreDB.drawio.png)
+![Diagram](https://github.com/Daizman/EFCore/blob/main/Diagrams/EFCoreBookStoreDB.drawio.png)
 
 ## Возможные улучшения.
 - Интерфейс пользователя.
