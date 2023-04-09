@@ -50,7 +50,7 @@ public interface IBook
     DateOnly PublishDate { get; set; }
     IList<IGenre> Genres { get; set; }
     IList<IAuthor> Authors { get; set; }
-    IPublisher PublisherId { get; set; }
+    IPublisher Publisher { get; set; }
     // 2-nd iteration
     double Rating { get; set; }
 }
