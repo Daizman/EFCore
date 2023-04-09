@@ -1,0 +1,4 @@
+namespace EFCore.Dtos.Read
+{
+    
+}
