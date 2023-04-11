@@ -92,7 +92,7 @@ namespace EFCore.Models
             => _genres.FirstOrDefault(g => g == genre) is not null;
 
         public override bool Equals(object? obj)
-            => obj is not null && obj is Book && (obj as Book).Id == Id;
+            => obj is not null && obj is Book && (obj as Book)?.Id == Id;
 
         public override int GetHashCode()
             => base.GetHashCode();
