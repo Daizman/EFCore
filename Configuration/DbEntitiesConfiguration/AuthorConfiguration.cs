@@ -8,7 +8,8 @@ namespace EFCore.Configuration.DbEntitiesConfiguration
     {
         public void Configure(EntityTypeBuilder<Author> builder)
         {
-            
+            builder.HasIndex(author => author.Id).IsUnique();
+            builder.Property(author => author.Fio).HasMaxLength(2048);
         }
     }
 }
