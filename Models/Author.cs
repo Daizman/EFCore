@@ -77,7 +77,7 @@ namespace EFCore.Models
             _publishers.AddRange(publishers);
         }
 
-        public void EditPublisher(IEnumerable<Publisher> publishers)
+        public void EditPublishers(IEnumerable<Publisher> publishers)
         {
             _publishers = publishers.ToList();
         }
