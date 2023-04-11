@@ -4,6 +4,7 @@ namespace EFCore.Models
     {
         private List<Genre> _genres;
         private List<Author> _authors;
+        private string _title;
 
         public Book(
             Guid id,
@@ -14,7 +15,7 @@ namespace EFCore.Models
             List<Author> authors)
         {
             Id = id;
-            Title = title;
+            _title = title;
             PublishDate = publishDate;
             PublisherId = publisherId;
             _genres = genres;
@@ -22,7 +23,19 @@ namespace EFCore.Models
         }
 
         public Guid Id { get; }
-        public string Title { get; private set; }
+        public string Title 
+        {
+            get => _title;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new InvalidOperationException("Title can't be empty");
+                }
+
+                _title = value.Trim();
+            }
+        }
         public DateOnly PublishDate { get; set; }
         public Guid PublisherId { get; set; }
         public IEnumerable<Genre> Genres => _genres;
