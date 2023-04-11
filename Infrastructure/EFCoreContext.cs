@@ -1,3 +1,4 @@
+using EFCore.Configuration.DbEntitiesConfiguration;
 using EFCore.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,6 +29,12 @@ namespace EFCore.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new AuthorConfiguration());
+            modelBuilder.ApplyConfiguration(new BookConfiguration());
+            modelBuilder.ApplyConfiguration(new GenreConifguration());
+            modelBuilder.ApplyConfiguration(new JournalConfiguration());
+            modelBuilder.ApplyConfiguration(new PublisherConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
 
