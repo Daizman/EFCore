@@ -100,5 +100,11 @@ namespace EFCore.Models
 
         public bool IsAuthorWithPublisher(Publisher publisher)
             => _publishers.FirstOrDefault(p => p == publisher) is not null;
+
+        public override bool Equals(object? obj)
+            => obj is not null && obj is Author && (obj as Author)?.Id == Id;
+
+        public override int GetHashCode()
+            => base.GetHashCode();
     }
 }
