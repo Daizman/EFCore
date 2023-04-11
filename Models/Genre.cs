@@ -13,7 +13,7 @@ namespace EFCore.Models
 
         public int Id { get; }
         public string Name { get; }
-        public ICollection<Book> Books => _books;
+        public IEnumerable<Book> Books => _books;
 
         public void AddBook(Book book)
         {

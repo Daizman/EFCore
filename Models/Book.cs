@@ -25,8 +25,8 @@ namespace EFCore.Models
         public string Title { get; private set; }
         public DateOnly PublishDate { get; set; }
         public Guid PublisherId { get; set; }
-        public ICollection<Genre> Genres => _genres;
-        public ICollection<Author> Authors => _authors;
+        public IEnumerable<Genre> Genres => _genres;
+        public IEnumerable<Author> Authors => _authors;
 
         public void AddAuthors(IEnumerable<Author> authors)
         {
