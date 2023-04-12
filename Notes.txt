@@ -1,2 +1,0 @@
-Заметки по работе с EF.
-Создание конфигурации: IEntityTypeConfiguration<T>
