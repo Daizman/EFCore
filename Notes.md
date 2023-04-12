@@ -13,4 +13,5 @@
 
 ## Возможные проблемы:
 - Если где-то в конструкторе контекста вызывается Database.EnsureCreated(), то при миграции через `dotnet ef database update` мы будем получать сообщение об ошибке, что таблица уже создана.
+  - Решение: заменить Database.EnsureCreated() на Database.Migrate() [Решение](https://stackoverflow.com/questions/38238043/how-and-where-to-call-database-ensurecreated-and-database-migrate)
 
