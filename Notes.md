@@ -11,3 +11,6 @@
 - `dotnet ef migrations add init`
 - `dotnet ef database update init`
 
+## Возможные проблемы:
+- Если где-то в конструкторе контекста вызывается Database.EnsureCreated(), то при миграции через `dotnet ef database update` мы будем получать сообщение об ошибке, что таблица уже создана.
+
