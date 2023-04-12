@@ -9,16 +9,14 @@ namespace EFCore.Models
         public Author(
             Guid id,
             string fio,
-            DateOnly birthDate,
-            List<Book> books,
-            List<Publisher> publishers
+            DateOnly birthDate
         )
         {
             Id = id;
             _fio = fio;
             BirthDate = birthDate;
-            _books = books;
-            _publishers = publishers;
+            _books = new();
+            _publishers = new();
         }
 
         public Guid Id { get; }

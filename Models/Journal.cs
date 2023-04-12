@@ -9,10 +9,8 @@ namespace EFCore.Models
             string title,
             DateOnly publishDate,
             Guid publisherId,
-            List<Genre> genres,
-            List<Author> authors,
             int edition
-        ) : base(id, title, publishDate, publisherId, genres, authors)
+        ) : base(id, title, publishDate, publisherId)
         {
             _edition = edition;
         }

@@ -8,15 +8,13 @@ namespace EFCore.Models
 
         public Publisher(
             Guid id,
-            string name,
-            List<Book> books,
-            List<Author> authors
+            string name
         )
         {
             Id = id;
             _name = name;
-            _books = books;
-            _authors = authors;
+            _books = new();
+            _authors = new();
         }
 
         public Guid Id { get; }

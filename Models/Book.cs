@@ -10,16 +10,15 @@ namespace EFCore.Models
             Guid id,
             string title,
             DateOnly publishDate,
-            Guid publisherId,
-            List<Genre> genres,
-            List<Author> authors)
+            Guid publisherId
+        )
         {
             Id = id;
             _title = title;
             PublishDate = publishDate;
             PublisherId = publisherId;
-            _genres = genres;
-            _authors = authors;
+            _genres = new();
+            _authors = new();
         }
 
         public Guid Id { get; }
