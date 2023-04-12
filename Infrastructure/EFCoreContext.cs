@@ -17,13 +17,12 @@ namespace EFCore.Infrastructure
             }
 
             _connectionString = connectionString;
-
-            Database.EnsureCreated();
+            Database.Migrate();
         }
 
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
-        public DbSet<Genre> Geres { get; set; }
+        public DbSet<Genre> Genres { get; set; }
         public DbSet<Journal> Journals { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
 
