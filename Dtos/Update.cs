@@ -1,4 +1,2 @@
-namespace EFCore.Dtos.Update
-{
-    
-}
+namespace EFCore.Dtos.Update;
+

@@ -1,12 +1,11 @@
 using AutoMapper;
 
-namespace EFCore.Configuration
+namespace EFCore.Configuration;
+
+public class CommonAutomapperConfiguration : Profile
 {
-    public class CommonAutomapperConfiguration : Profile
+    public CommonAutomapperConfiguration()
     {
-        public CommonAutomapperConfiguration()
-        {
-            // CreateMap<>();
-        }
+        // CreateMap<>();
     }
 }

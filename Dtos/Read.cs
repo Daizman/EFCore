@@ -1,4 +1,2 @@
-namespace EFCore.Dtos.Read
-{
-    
-}
+namespace EFCore.Dtos.Read;
+

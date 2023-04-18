@@ -1,4 +1,2 @@
-namespace EFCore.Dtos.Delete
-{
-    
-}
+namespace EFCore.Dtos.Delete;
+

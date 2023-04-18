@@ -1,4 +1,2 @@
-namespace EFCore.Dtos.Write
-{
-    
-}
+namespace EFCore.Dtos.Write;
+

@@ -2,44 +2,43 @@ using EFCore.Configuration.DbEntitiesConfiguration;
 using EFCore.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCore.Infrastructure
+namespace EFCore.Infrastructure;
+
+public class EFCoreContext : DbContext
 {
-    public class EFCoreContext : DbContext
+    private readonly string _connectionString;
+    
+    public EFCoreContext(DbContextOptions<EFCoreContext> options, IConfiguration configuration) : base(options)
     {
-        private readonly string _connectionString;
-        
-        public EFCoreContext(DbContextOptions<EFCoreContext> options, IConfiguration configuration) : base(options)
+        var connectionString = configuration.GetConnectionString("SqliteDb");
+        if (string.IsNullOrWhiteSpace(connectionString))
         {
-            var connectionString = configuration.GetConnectionString("SqliteDb");
-            if (string.IsNullOrWhiteSpace(connectionString))
-            {
-                throw new ArgumentException("Connection string not found");
-            }
-
-            _connectionString = connectionString;
-            Database.Migrate();
+            throw new ArgumentException("Connection string not found");
         }
 
-        public DbSet<Author> Authors { get; set; }
-        public DbSet<Book> Books { get; set; }
-        public DbSet<Genre> Genres { get; set; }
-        public DbSet<Journal> Journals { get; set; }
-        public DbSet<Publisher> Publishers { get; set; }
+        _connectionString = connectionString;
+        Database.Migrate();
+    }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfiguration(new AuthorConfiguration());
-            modelBuilder.ApplyConfiguration(new BookConfiguration());
-            modelBuilder.ApplyConfiguration(new GenreConifguration());
-            modelBuilder.ApplyConfiguration(new JournalConfiguration());
-            modelBuilder.ApplyConfiguration(new PublisherConfiguration());
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
+    public DbSet<Genre> Genres { get; set; }
+    public DbSet<Journal> Journals { get; set; }
+    public DbSet<Publisher> Publishers { get; set; }
 
-            base.OnModelCreating(modelBuilder);
-        }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfiguration(new AuthorConfiguration());
+        modelBuilder.ApplyConfiguration(new BookConfiguration());
+        modelBuilder.ApplyConfiguration(new GenreConifguration());
+        modelBuilder.ApplyConfiguration(new JournalConfiguration());
+        modelBuilder.ApplyConfiguration(new PublisherConfiguration());
 
-        private void InitDb(ModelBuilder modelBuilder)
-        {
+        base.OnModelCreating(modelBuilder);
+    }
 
-        }
+    private void InitDb(ModelBuilder modelBuilder)
+    {
+
     }
 }
