@@ -10,13 +10,13 @@ public class Book
         Guid id,
         string title,
         DateOnly publishDate,
-        Guid publisherId
+        Publisher publisher
     )
     {
         Id = id;
         _title = title;
         PublishDate = publishDate;
-        PublisherId = publisherId;
+        Publisher = publisher;
         _genres = new();
         _authors = new();
     }
@@ -36,7 +36,8 @@ public class Book
         }
     }
     public DateOnly PublishDate { get; set; }
-    public Guid PublisherId { get; set; }
+    public Publisher Publisher { get; set; }
+    public Guid PublisherId => Publisher.Id;
     public IEnumerable<Genre> Genres => _genres;
     public IEnumerable<Author> Authors => _authors;
 

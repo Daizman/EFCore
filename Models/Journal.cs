@@ -8,9 +8,9 @@ public class Journal : Book
         Guid id,
         string title,
         DateOnly publishDate,
-        Guid publisherId,
+        Publisher publisher,
         int edition
-    ) : base(id, title, publishDate, publisherId)
+    ) : base(id, title, publishDate, publisher)
     {
         _edition = edition;
     }
