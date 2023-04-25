@@ -10,5 +10,12 @@ public class PublisherConfiguration : IEntityTypeConfiguration<Publisher>
     {
         builder.HasIndex(publihser => publihser.Id).IsUnique();
         builder.Property(publisher => publisher.Name).HasMaxLength(1024);
+
+        builder
+            .HasData(
+                new Publisher(Guid.NewGuid(), "Pinguin"),
+                new Publisher(Guid.NewGuid(), "Harper Collins"),
+                new Publisher(Guid.NewGuid(), "Macmillan")
+            );
     }
 }
