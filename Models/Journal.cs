@@ -4,13 +4,17 @@ public class Journal : Book
 {
     private int _edition;
 
+    private Journal() : base() { }
+
     public Journal(
         Guid id,
         string title,
         DateOnly publishDate,
         Publisher publisher,
+        IEnumerable<Genre> genres,
+        IEnumerable<Author> authors,
         int edition
-    ) : base(id, title, publishDate, publisher)
+    ) : base(id, title, publishDate, publisher, genres, authors)
     {
         _edition = edition;
     }

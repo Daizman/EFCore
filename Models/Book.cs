@@ -6,19 +6,23 @@ public class Book
     private List<Author> _authors;
     private string _title;
 
+    protected Book() { }
+
     public Book(
         Guid id,
         string title,
         DateOnly publishDate,
-        Publisher publisher
+        Publisher publisher,
+        IEnumerable<Genre> genres,
+        IEnumerable<Author> authors
     )
     {
         Id = id;
         _title = title;
         PublishDate = publishDate;
         Publisher = publisher;
-        _genres = new();
-        _authors = new();
+        _genres = genres.ToList();
+        _authors = authors.ToList();
     }
 
     public Guid Id { get; }
@@ -37,7 +41,6 @@ public class Book
     }
     public DateOnly PublishDate { get; set; }
     public Publisher Publisher { get; set; }
-    public Guid PublisherId => Publisher.Id;
     public IEnumerable<Genre> Genres => _genres;
     public IEnumerable<Author> Authors => _authors;
 
