@@ -36,9 +36,4 @@ public class EFCoreContext : DbContext
 
         base.OnModelCreating(modelBuilder);
     }
-
-    private void InitDb(ModelBuilder modelBuilder)
-    {
-
-    }
 }
