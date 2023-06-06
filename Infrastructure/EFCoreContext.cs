@@ -8,7 +8,8 @@ public class EFCoreContext : DbContext
 {
     private readonly string _connectionString;
 
-    public EFCoreContext(DbContextOptions<EFCoreContext> options, IConfiguration configuration) : base(options)
+    public EFCoreContext(DbContextOptions<EFCoreContext> options, IConfiguration configuration)
+        : base(options)
     {
         var connectionString = configuration.GetConnectionString("SqliteDb");
         if (string.IsNullOrWhiteSpace(connectionString))

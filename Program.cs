@@ -37,9 +37,33 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/publisher", async (EFCoreContext context, IMapper mapper) => 
+app.MapGet("/genre", async (EFCoreContext context, IMapper mapper) =>
 {
-    var publishers = await context.Publishers.ToListAsync();
+    var genres = await context.Genres.AsNoTracking().ToListAsync();
+    return genres.ConvertAll(genre => mapper.Map<GenreReadDto>(genre));
+});
+
+app.MapGet("/book", async (EFCoreContext context, IMapper mapper) =>
+{
+    var books = await context.Books.AsNoTracking().ToListAsync();
+    return books.ConvertAll(book => mapper.Map<BookReadDto>(book));
+});
+
+app.MapGet("/journal", async (EFCoreContext context, IMapper mapper) =>
+{
+    var journals = await context.Journals.AsNoTracking().ToListAsync();
+    return journals.ConvertAll(journal => mapper.Map<JournalReadDto>(journal));
+});
+
+app.MapGet("/author", async (EFCoreContext context, IMapper mapper) =>
+{
+    var authors = await context.Authors.AsNoTracking().ToListAsync();
+    return authors.ConvertAll(author => mapper.Map<AuthorReadDto>(author));
+});
+
+app.MapGet("/publisher", async (EFCoreContext context, IMapper mapper) =>
+{
+    var publishers = await context.Publishers.AsNoTracking().ToListAsync();
     return publishers.ConvertAll(publisher => mapper.Map<PublisherReadDto>(publisher));
 });
 

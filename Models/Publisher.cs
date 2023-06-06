@@ -6,6 +6,10 @@ public class Publisher
     private List<Book> _books;
     private List<Author> _authors;
 
+    protected Publisher()
+    {
+    }
+
     public Publisher(
         Guid id,
         string name
