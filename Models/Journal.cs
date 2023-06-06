@@ -4,7 +4,9 @@ public class Journal : Book
 {
     private int _edition;
 
-    private Journal() : base() { }
+    private Journal()
+    {
+    }
 
     public Journal(
         Guid id,
