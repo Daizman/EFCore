@@ -7,7 +7,7 @@ namespace EFCore.Infrastructure;
 public class EFCoreContext : DbContext
 {
     private readonly string _connectionString;
-    
+
     public EFCoreContext(DbContextOptions<EFCoreContext> options, IConfiguration configuration) : base(options)
     {
         var connectionString = configuration.GetConnectionString("SqliteDb");
@@ -30,7 +30,7 @@ public class EFCoreContext : DbContext
     {
         modelBuilder.ApplyConfiguration(new AuthorConfiguration());
         modelBuilder.ApplyConfiguration(new BookConfiguration());
-        modelBuilder.ApplyConfiguration(new GenreConifguration());
+        modelBuilder.ApplyConfiguration(new GenreConfiguration());
         modelBuilder.ApplyConfiguration(new JournalConfiguration());
         modelBuilder.ApplyConfiguration(new PublisherConfiguration());
 

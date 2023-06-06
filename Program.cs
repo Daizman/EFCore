@@ -11,10 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<EFCoreContext>(options =>
-{
-    options.UseSqlite(builder.Configuration.GetConnectionString("SqliteDb"));
-});
+builder.Services.AddDbContext<EFCoreContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("SqliteDb")));
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

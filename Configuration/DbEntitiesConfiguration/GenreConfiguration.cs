@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EFCore.Configuration.DbEntitiesConfiguration;
 
-public class GenreConifguration : IEntityTypeConfiguration<Genre>
+public class GenreConfiguration : IEntityTypeConfiguration<Genre>
 {
     public void Configure(EntityTypeBuilder<Genre> builder)
     {
