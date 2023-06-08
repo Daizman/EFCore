@@ -3,6 +3,7 @@ using System;
 using EFCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCore.Migrations
 {
     [DbContext(typeof(EFCoreContext))]
-    partial class EFCoreContextModelSnapshot : ModelSnapshot
+    [Migration("20230608084140_updateModels")]
+    partial class updateModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
@@ -86,25 +89,25 @@ namespace EFCore.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("115d85f4-512d-48a0-904d-a1350f94e83c"),
+                            Id = new Guid("fbd1ecea-ec9d-4172-a825-feae7e42422d"),
                             BirthDate = new DateOnly(1799, 6, 6),
                             Fio = "Пушкин А.С."
                         },
                         new
                         {
-                            Id = new Guid("35dd3062-f0ad-48b1-bbbf-d55e8449acca"),
+                            Id = new Guid("99db2a14-f4a9-42c1-a2d1-266a0f0d02b9"),
                             BirthDate = new DateOnly(1821, 10, 30),
                             Fio = "Достоевский Ф.М."
                         },
                         new
                         {
-                            Id = new Guid("19b065fd-4002-47c4-9afd-0d955f1b0f2d"),
+                            Id = new Guid("6e677623-4745-4f4e-9955-501d95aac980"),
                             BirthDate = new DateOnly(1828, 8, 28),
                             Fio = "Толстой Л.Н."
                         },
                         new
                         {
-                            Id = new Guid("3907b793-2a15-453c-b3fb-074dbf82c61f"),
+                            Id = new Guid("6fcd3229-b28e-4f8d-a4c3-56502e36a0a4"),
                             BirthDate = new DateOnly(1860, 1, 17),
                             Fio = "Чехов А.П."
                         });
@@ -257,17 +260,17 @@ namespace EFCore.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ce5bcb3f-8753-4484-8629-0b05b6322db4"),
+                            Id = new Guid("707c8cab-6229-4f03-8b45-822e28da5b26"),
                             Name = "Pinguin"
                         },
                         new
                         {
-                            Id = new Guid("55a2d15a-cec5-4eb4-b4d6-2dc2ad7f0715"),
+                            Id = new Guid("e7c40e9a-5b14-49ec-851f-8d38bf232336"),
                             Name = "Harper Collins"
                         },
                         new
                         {
-                            Id = new Guid("59a4fbff-918f-483f-abb2-7c10ff06d64f"),
+                            Id = new Guid("69935fee-dbe4-4ab1-916d-06d3d238f240"),
                             Name = "Macmillan"
                         });
                 });

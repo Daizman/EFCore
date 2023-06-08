@@ -6,18 +6,9 @@ namespace EFCore.Infrastructure;
 
 public class EFCoreContext : DbContext
 {
-    private readonly string _connectionString;
-
-    public EFCoreContext(DbContextOptions<EFCoreContext> options, IConfiguration configuration)
+    public EFCoreContext(DbContextOptions<EFCoreContext> options)
         : base(options)
     {
-        var connectionString = configuration.GetConnectionString("SqliteDb");
-        if (string.IsNullOrWhiteSpace(connectionString))
-        {
-            throw new ArgumentException("Connection string not found");
-        }
-
-        _connectionString = connectionString;
         Database.Migrate();
     }
 

@@ -6,7 +6,9 @@ public class Book
     private List<Author> _authors;
     private string _title;
 
-    protected Book() { }
+    protected Book()
+    {
+    }
 
     public Book(
         Guid id,

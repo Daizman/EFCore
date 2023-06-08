@@ -19,7 +19,12 @@ public class GenreConfiguration : IEntityTypeConfiguration<Genre>
             new Genre(6, "Драма"),
             new Genre(7, "Романтика"),
             new Genre(8, "Фэнтези"),
-            new Genre(9, "Приключения")
+            new Genre(9, "Приключения"),
+            new Genre(10, "Роман"),
+            new Genre(11, "Рассказ"),
+            new Genre(12, "Повесть"),
+            new Genre(13, "Психология"),
+            new Genre(14, "Стихи")
         );
     }
 }
